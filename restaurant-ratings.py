@@ -10,13 +10,13 @@ def print_rating(filename):
         split_line = line.split(":")
        
         restaurant = split_line[0]
-        value = split_line[1]
+        rating = split_line[1]
 
-        restaurant_ratings[restaurant] = value
+        restaurant_ratings[restaurant] = rating
 
-    for restaurant in sorted(restaurant_ratings):
-        print restaurant, "is rated at", restaurant_ratings[restaurant]
+    for restaurant, rating in sorted(restaurant_ratings.items()):
+        print restaurant, "is rated at", rating
 
     restaurants.close()
 
-print print_rating("scores.txt")
+print_rating("scores.txt")
